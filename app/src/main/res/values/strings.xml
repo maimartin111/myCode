@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">NoiseOut</string>
+    <string name="ambient_screen_text">Evaluate Background Noise</string>
+    <string name="full_name">Full Name</string>
+    <string name="weight">Weight</string>
+    <string name="user_information">User Information</string>
+    <string name="email">Email</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="height">Height</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="login_information">Login Information</string>
+    <string name="start_text">Start</string>
+    <string name="begin_cancelling_text">Click to Begin Cancelling Snores</string>
+    <string name="evaluate_background_text">Click to Begin Evaluating Background Noise</string>
+    <string name="start">Start</string>
+    <string name="_5_00">5:00</string>
+    <string name="time_remaining">Time Remaining</string>
+    <string name="skip">Skip</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="keep_me_logged_in">Keep me logged in</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="new_to_noiseout">New to Noiseout?</string>
+    <string name="play">Play</string>
+    <string name="cancelling">CANCELLING</string>
+    <string name="receiving">RECEIVING</string>
+    <string name="done">DONE</string>
+    <string-array name="gender_array">
+        <item>Gender</item>
+        <item>Female</item>
+        <item>Male</item>
+        <item>Other</item>
+    </string-array>
+</resources>
