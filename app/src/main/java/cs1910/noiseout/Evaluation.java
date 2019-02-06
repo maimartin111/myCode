@@ -16,7 +16,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.RetryPolicy;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -31,6 +39,9 @@ public class Evaluation extends AppCompatActivity {
     TextView instruction;
 
     TextView screenTitle;
+
+    TextView output;
+    RequestQueue queue;
 
     //Time is handled in milliseconds
     long countdownTime = 300000;  //5 min * 60 seconds * 1000
@@ -138,6 +149,8 @@ public class Evaluation extends AppCompatActivity {
         instruction = findViewById(R.id.start_stop_text);
         screenTitle = findViewById(R.id.cancelling_text);
 
+        output = findViewById(R.id.textView);
+        output.setText("Display of REST API response");
 
         //Button starts out as not checked
         start.setChecked(false);
@@ -229,6 +242,49 @@ public class Evaluation extends AppCompatActivity {
                 }
             }
         });
+
+        //-----------------------------------------------------------------------------------------------
+
+        queue = Volley.newRequestQueue(this);
+
+        String url = "http://noise-app.azurewebsites.net/inverse";
+
+        //String url = "https://androidtutorialpoint.com/api/volleyString";
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        output.setText("Display of REST API response: " + response);
+                    }
+                },
+                new com.android.volley.Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        output.setText(error.toString());
+                    }
+                });
+        stringRequest.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return 50000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 50000;
+            }
+
+            @Override
+            public void retry(VolleyError error) throws VolleyError {
+
+            }
+        });
+
+
+        queue.add(stringRequest);
+
+        //-----------------------------------------------------------------------------------------------
     }
 
 

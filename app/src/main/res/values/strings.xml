@@ -29,8 +29,8 @@
     <string name="done">DONE</string>
     <string-array name="gender_array">
         <item>Gender</item>
-        <item>Female</item>
-        <item>Male</item>
-        <item>Other</item>
+        <item>F</item>
+        <item>M</item>
+        <item>O</item>
     </string-array>
 </resources>

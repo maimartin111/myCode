@@ -7,7 +7,18 @@
     tools:context=".Registration">
 
     <TextView
-        android:id="@+id/user_information_label"
+        android:id="@+id/first_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="First Name"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/first_name_field"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/first_name_field"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -15,21 +26,37 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_information_label" />
+
+    <TextView
+        android:id="@+id/user_information_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:gravity="center_horizontal"
         android:text="@string/user_information"
-        android:textSize="32sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/full_name_field"
+        android:id="@+id/last_name_field"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
@@ -37,7 +64,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_information_label" />
+        app:layout_constraintTop_toBottomOf="@+id/first_name_field"
+        tools:layout_editor_absoluteY="112dp" />
 
 
     <Spinner
@@ -57,7 +85,7 @@
     <EditText
         android:id="@+id/weight_field"
         android:layout_width="0dp"
-        android:layout_height="49dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -136,14 +164,14 @@
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="160dp"
+        android:layout_width="158dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="112dp"
         android:layout_marginLeft="112dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="112dp"
         android:layout_marginRight="112dp"
-        android:onClick="sendDemographics"
+        android:onClick="createUser"
         android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.481"
@@ -164,7 +192,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/full_name_field" />
+        app:layout_constraintTop_toBottomOf="@+id/last_name_field" />
 
     <ImageView
         android:id="@+id/input_image"
@@ -177,14 +205,14 @@
         app:srcCompat="@drawable/calendar" />
 
     <TextView
-        android:id="@+id/full_name_label"
+        android:id="@+id/last_name_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:text="@string/full_name"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/full_name_field"
+        app:layout_constraintBottom_toTopOf="@+id/last_name_field"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -260,14 +288,25 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
         android:gravity="center_horizontal"
         android:text="@string/login_information"
-        android:textSize="32sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:onClick="getUserInfo"
+        android:text="get info"
+        app:layout_constraintStart_toEndOf="@+id/submit"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_password_field" />
 
 </android.support.constraint.ConstraintLayout>

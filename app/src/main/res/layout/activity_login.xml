@@ -53,6 +53,7 @@
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:text="@string/sign_up"
+        android:onClick="newUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_noiseout" />
