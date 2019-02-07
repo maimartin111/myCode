@@ -1,9 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
     tools:context=".Dashboard">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/detectNum"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="false"
+            android:text="0"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/detectText"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:singleLine="false"
+            android:text="Snores Detected"
+            android:textSize="32sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/cancelNum"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="false"
+            android:text="0"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/cancelText"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:singleLine="false"
+            android:text="Snores Cancelled"
+            android:textSize="32sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/rateNum"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="false"
+            android:text="0%"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/rateText"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:singleLine="false"
+            android:text="Cancelling Rate"
+            android:textSize="32sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="355dp"
+        android:layout_height="206dp"
+        android:src="@drawable/line_graph" />
+
+    <Button
+        android:id="@+id/Button1"
+        android:layout_width="220sp"
+        android:layout_height="wrap_content"
+        android:text="Start Over" />
+
+</LinearLayout>
